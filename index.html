@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
-    <title>Elon SpaceX Portfolio</title>
+    <title>EduMaster</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="container">
@@ -16,45 +18,62 @@
         <table width="850px" class="relative">
             <tr>
                 <nav>
-                    <th style="background-color: red;"><a href="index.html" style="color:white;">Home</a>
+                    <th style="background-color: orangered;"><a href="universities.html" style="color:white;">UNIVERSITIES</a>
                     </th>
-                    <th style="background-color:black;"><a href="portfolio.html" style="color:white;">Portfolio</a></th>
-                    <th style="background-color: black;"><a href="contact.html" style="color:white;">Contact</a></th>
+                    <th style="background-color: orangered;"><a href="portfolio.html" style="color:white;">GUIDES</a></th>
+                    <th style="background-color: orangered;"><a href="contact.html" style="color:white;">BLOGS</a></th>
+                    <th style="background-color: orangered;"><a href="login.html" style="color:white;">LOGIN</a></th>
+                    <th style="background-color: orangered;"><a href="contact.html" style="color:white;">SIGNUP</a></th>
                 </nav>
             </tr>
         </table>
     </header>
     <main class="row">
-        <section class="col" class="section">
-            <div class="row">
-                <div class="col">
-                    <h2>WELCOME</h2>
-                    <p>Elon Musk leads Space Exploration Technologies (SpaceX), where he oversees the development
-                        and manufacturing of advanced rockets and spacecraft for missions to and beyond Earth orbit.
-                    
-                        Elon also leads Tesla, which makes electric cars, giant batteries and solar products.
-                        Previously, Elon co-founded and sold PayPal, the world's leading Internet payment system,
-                        and Zip2, one of the first internet maps and directions services, which helped bring major
-                        publishers, including the New York Times and Hearst, online.
-                    </p>
-                </div>
-                <div class="col" id="img">
-                    <img style="col-sm-1" class="img-fluid" src="1.jpg" />
-                </div>
-
-                <div class="col" id="i">
-                    <ul id="t1" >
-                        <li id="li"><strong>P</strong> rofessional</li>
-                        <li id="li"><strong>R</strong> eliable</li>
-                        <li id="li"><strong>I</strong> maginative</li>
-                        <li id="li"><strong>N</strong> eighbourly</li>
-                        <li id="li"><strong>S</strong> killful</li>
+        <section class="col-12 col-md-4 col-lg-3">
+                <div data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
                     </ul>
+     
+     
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="1.png" alt="SOLENT UNIVERSITY" style="width:50%;">
+                        <div class="carousel-caption">
+                          <h3>SOLENT UNIVERSITY</h3>
+                        </div>
+                      </div>
+
+                      <div class="item">
+                        <img src="2.jpg" alt="UNIVERSTY OF SOUTHAMPTON" style="width:50%;">
+                        <div class="carousel-caption">
+                          <h3>UNIVERSTY OF SOUTHAMPTON</h3>
+                        </div>
+                      </div>
+
+                      <div class="item">
+                        <img src="3.png" alt="UNIVERSITY OF OXFORD" style="width:50%;">
+                        <div class="carousel-caption">
+                          <h3>UNIVERSITY OF OXFORD</h3>
+                        </div>
+                      </div>
                 </div>
-            </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+             </div>
         </section>
     </main>
-
+   
     <footer class="row">
         <div class="row">
             <div class="col">

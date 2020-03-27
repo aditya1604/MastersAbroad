@@ -1,67 +1,12 @@
-header{
-    background-color: silver;
-    color: black;
-}
-a {
-    text-decoration: none;
-}
-p {
-    padding:10px;
-}
-h1{
+header {
+    background-color: whitesmoke;
     padding: 10px;
 }
-table {
-    padding: 5px;
-}
-h2 {
-    color: red;
-    padding: 20px;
-}
 section {
+    padding: 05px;
     
-    margin: 2%;
     border-style: ridge;
-    border-color: palevioletred;
-    background-color: whitesmoke;
-    
 }
-table.relative {
-    position: relative;
-    left: 10px;
-}
-footer {
-    background-color: grey;
-    color: white;
-}
-#t1 {
-    background-color: white;
-    text-align: start;
-    margin: 5%;
-}
-#i {
-    height: 0%;
-    margin: 2%;
-    background-color: grey;
-}
-li {
-    list-style-type: none;
-    font-size: 150%;
-    width: 180px;
-    margin-left: 20px;
-}
-#img {
-    margin: 2%;
-}
-#div {
-    text-align: center;
-}
-
-#t1{
-    background:grey;
-}
-
-#t1 li{
-    margin: 2px 0;
-    background: white;
+#p {
+    background-color: blue;
 }
