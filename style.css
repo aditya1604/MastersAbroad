@@ -1,12 +1,65 @@
-header {
-    background-color: whitesmoke;
+header { 
+    color: white;
     padding: 10px;
 }
 section {
-    padding: 05px;
-    
+    padding: 05px;  
     border-style: ridge;
 }
-#p {
-    background-color: blue;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    overflow: hidden;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    float: right;
+}
+ul li {
+    display: inline-block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-style: italic;
+}
+#d {
+    border-style: none;
+    width: 1170px;
+}
+#x {
+    margin-left: 7%;   
+}
+#c {
+    color: whitesmoke;
+    margin-right: 1%;
+    padding: 5px;
+    border-style: none;
+
+}
+#a {
+    width: 10px;
+    background-color: none;
+}
+#m {
+    padding: 10px;
+}
+* {
+    box-sizing: border-box;
+  }
+  
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  footer {
+    color: white;
 }
