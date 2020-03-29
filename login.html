@@ -1,18 +1,35 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Login</title>
-        <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="style.css">
-    </head>
+<html lang="eng">
 
-    <form>
-        Username : <input id="username"><br>
-        Password  : <input id="password"><br>
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body background="back.jpeg">
+    <header id="h">
+        <h1 style="color: white;">Master's Abroad</h1>
+    </header>
+    <form id="lg" action="user.html">
+        <h1>Login</h1><br>
+        <label for="email"><b>Email</b></label><br>
+        <input id="t" type="text" placeholder="Enter Email" name="email" required><br><br>
+
+        <label for="psw"><b>Password</b></label><br>
+        <input id="t" type="password" placeholder="Enter Password" name="psw" required><br><br>
+
+        <input type="checkbox"> Remeber Me <br><br>
         <button id="button">Login</button>
+
+        <a href="Forgot.html" style="color: white;">Forgot Password</a>
     </form>
+    <img src="lg.png" width="50%" height="500" id="img">
+
+</body>
+
 </html>
