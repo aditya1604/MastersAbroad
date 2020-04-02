@@ -1,4 +1,11 @@
 <?php
+if(isset($_POST["signup"]))
+{
+    header('user.html');
+}
+
+?>
+<?php
 $firstname = $_POST['fristname'];
 $lastname = $_POST['lastname'];
 $email = $_POST['email'];
@@ -33,6 +40,7 @@ if(!empty($firstname)||!empty($lastname))||!empty($email)||!empty($password)) {
             $stmt-> bind_param("ssss", $firstname, $lastname, $email, $password);
             $stmt-> execute();
             
+            header('user.html');
             
         }
         else {
