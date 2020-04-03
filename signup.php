@@ -1,17 +1,14 @@
-
-?>
 <?php
 $firstname = $_POST['fristname'];
 $lastname = $_POST['lastname'];
 $email = $_POST['email'];
-$username= $_POST['username'];
 $password = $_POST['password'];
 
 if (!empty($firstname) || !empty($lastname) || !empty($email) || !empty($password)) {
     $host = "localhost";
     $dbUsername = "Q14980258";
     $dbPassword = "aetoorau";
-    $dbname = "signup";   
+    $dbname = "Q14980258";   
 
     $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
     if(mysqli_connect_error()) {
@@ -23,29 +20,24 @@ if (!empty($firstname) || !empty($lastname) || !empty($email) || !empty($passwor
         
         $stmt = $conn-> prepare($select);
         $stmt->bind_param("s", $email);
-        $stmt-> execcte();
+        $stmt-> execute();
         $stmt->bind_result($email);
         $stmt->store_result();
-        $rnum = $stmt->num_rows;
+        $colnum = $stmt->num_column;
 
-        if($rnum == 0) {
-            $stmt = close();
-
+        if($colnum == 0) {
             $stmt = $conn-> prepare($insert);
             $stmt-> bind_param("ssss", $firstname, $lastname, $email, $password);
             $stmt-> execute();
-            response.sendredirect('user.html');
-            
+            header('user.html');      
         }
         else {
             echo "Email is already registered";
         }
         $stmt->close();
-        $conn->close();
-        
+        $conn->close();       
     }
 }
-
 else {
     echo "All fiels are required";
     die();
