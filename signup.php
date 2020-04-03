@@ -1,8 +1,3 @@
-<?php
-if(isset($_POST["signup"]))
-{
-    header('user.html');
-}
 
 ?>
 <?php
@@ -12,7 +7,7 @@ $email = $_POST['email'];
 $username= $_POST['username'];
 $password = $_POST['password'];
 
-if(!empty($firstname)||!empty($lastname))||!empty($email)||!empty($password)) {
+if (!empty($firstname) || !empty($lastname) || !empty($email) || !empty($password)) {
     $host = "localhost";
     $dbUsername = "Q14980258";
     $dbPassword = "aetoorau";
@@ -39,8 +34,7 @@ if(!empty($firstname)||!empty($lastname))||!empty($email)||!empty($password)) {
             $stmt = $conn-> prepare($insert);
             $stmt-> bind_param("ssss", $firstname, $lastname, $email, $password);
             $stmt-> execute();
-            
-            header('user.html');
+            response.sendredirect('user.html');
             
         }
         else {
@@ -48,6 +42,7 @@ if(!empty($firstname)||!empty($lastname))||!empty($email)||!empty($password)) {
         }
         $stmt->close();
         $conn->close();
+        
     }
 }
 
