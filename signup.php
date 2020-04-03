@@ -11,9 +11,8 @@ $pass = $_POST['pass'];
     else {
         $stmt = $conn->prepare("insert into signup (firstname, lastname, email, pass)
          values(?, ?, ?, ?)");
-    
-        $stmt->bind_param('ssss', $firstname, $lastname, $email, $pass);
-        $stmt->execute();
+        
+        $stmt->execute(['ssss', $firstname, $lastname, $email, $pass]);
         echo "Data entered successfully";
         $stmt->close();
         $conn->close();    
