@@ -13,7 +13,6 @@ $pass = $_POST['pass'];
          values(?, ?, ?, ?)");
 
         $stmt->execute(['ssss', $firstname, $lastname, $email, $pass]);
-        echo "Data entered successfully";
         $stmt->close();
         $conn->close();    
     }
