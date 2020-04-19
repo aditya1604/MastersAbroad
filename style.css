@@ -84,6 +84,7 @@ section {
     width: 30%;
   }
 #t {
+    color: black;
     width: 50%;
     height: 50px;
 }
