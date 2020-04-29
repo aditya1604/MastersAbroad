@@ -2,14 +2,14 @@
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 $email = $_POST['email'];
-$password = $_POST['pass'];
+$password = $_POST['password'];
     echo "<h1>$firstname $lastname $email $pass</h1>";
     $conn = new PDO("mysql:host=localhost;dbname=Q14980258;", "Q14980258", "aetoorau");
     if($conn->connect_error) {
         die('Connection Failed :'.$conn->connect_error);
     }
     else {
-        $stmt = $conn->prepare("insert into signup (firstname, lastname, email, pass)
+        $stmt = $conn->prepare("insert into signup (firstname, lastname, email, password)
          values(?, ?, ?, ?)");
 
         $stmt->execute([$firstname, $lastname, $email, $password]);
