@@ -1,3 +1,7 @@
+body {
+  background-repeat: no-repeat;
+  background-size: 1800px 750px;
+}
 h1 {
   font-style: italic;
   margin-left: 0%;
@@ -12,9 +16,9 @@ ul {
 }
 ul li {
     display: inline;
-    border-style: solid;
+    border-style: none;
     padding: 14px 18px;
-    text-decoration: solid;
+    text-decoration: none;
     font-style: italic;
 }
 #uni {
@@ -23,6 +27,7 @@ ul li {
 #d {
     border-style: none;
     width: 1100px;
+    margin-left: 8%;
 }
 #c {
     margin-top: 4%;
@@ -108,3 +113,52 @@ border-style: ridge;
 border-color: palevioletred;
 background-color: whitesmoke;
 }
+
+
+
+#navbarSupportedContent .btn-outline-success {
+  color: transparent;
+  border-color: transparent;
+  margin-left: 10px;
+  border-radius: 0px;
+}
+
+#navbarSupportedContent .btn-outline-success:hover {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#mainnav{
+  display: inline-block;
+}
+
+#mainnav .active {
+  background-color:transparent;
+}
+#header {
+  z-index: 10000;
+  left: 0px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  background-color: transparent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#header a{
+  color: white;
+}
+
+#header h1 {
+  padding-right: 20px;
+}
+@media only screen and (max-device-width: 1000px)
+{ #masters {
+    font-size: 30px;
+}}
+
+#masters:hover {
+  text-decoration: none;
+  transform: scale(2);
+}
+
