@@ -41,27 +41,9 @@ ul li {
     background-color:none;
     
 }
-#article {
-  margin-top: 4%;
-    margin-right: 5%;
-    padding: 5px;
-    padding-right: 25%;
-    border-style: outset;
-
- /* margin-top: 4%;
-  margin-right: 15%;
-  padding-left: 8%;
-  border-style: outset;
-  */
-}
-
 .carousel-inner {
   margin-top: 0%;
     margin-left: 3%;
-}
-#carousel1 {
-  margin-top: 0%;
-    margin-left: 6%;
 }
 #lg {
     font-size: x-large;
@@ -73,11 +55,14 @@ ul li {
     float: left;
 }
 section {
-    width: 42%;
+    width: 10%;
+    padding-top: 2%;
+    margin-right: 2%;
     border-style: ridge;
-    border-color: palevioletred;
-    background-color: whitesmoke;
-    
+}
+#article {
+  padding-top: 2%;
+  padding-left: 10%;
 }
 #button {
     background-color: #4CAF50;
@@ -113,9 +98,6 @@ border-style: ridge;
 border-color: palevioletred;
 background-color: whitesmoke;
 }
-
-
-
 #navbarSupportedContent .btn-outline-success {
   color: transparent;
   border-color: transparent;
