@@ -2,7 +2,22 @@
                 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                 required><br>
 <body>
-
+  <?php
+  include('session.php');
+?>
+<!DOCTYPE html>
+<html>
+  
+  <head>
+     <title>Welcome </title>
+  </head>
+  
+  <body>
+     <h1>Welcome <?php echo $login_session; ?></h1> 
+     <h2><a href = "logout.php">Log Out</a></h2>
+  </body>
+  
+</html>
 <div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">

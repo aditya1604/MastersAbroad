@@ -3,14 +3,241 @@
 ?>
 <!DOCTYPE html>
 <html>
-   
-   <head>
-      <title>Welcome </title>
-   </head>
-   
-   <body>
-      <h1>Welcome <?php echo $login_session; ?></h1> 
-      <h2><a href = "logout.php">Log Out</a></h2>
-   </body>
-   
+
+<head>
+   <style>
+      .dropdown {
+  float: left;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  /*background-color: red;
+   */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: whitesmoke;
+  width: 5%;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+   </style>
+   <title>Welcome </title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body background="img/home.jpeg">
+   <nav class="navbar navbar-expand-lg navbar-light" id="header">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto">
+           <li><h2><a id="masters" href="index.html" style="color:wheat;">Masters Abroad</a></h2></li>
+            <li class="nav-item active"><a href="index.html">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="universities.html">UNIVERSITIES</a></li>
+            <li class="nav-item"><a class="nav-link" href="articles.html">ARTICLES</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.html">LOGIN</a></li>
+            <li class="nav-item"><a class="nav-link" href="signup.html">SIGNUP</a></li>
+            <li class="dropdown" type="button" style="color: white;">Profile<i class="fa fa-caret-down"></i>
+                  <div class="dropdown-content">
+                     <a href="update_password.php">Reset</a>
+                     <a href="logout.php">Sign Out</a>
+                  </div>
+            </li>
+         </ul>
+      </div>
+   </nav><br><br>
+   <br><br><br><br><br>
+   <main class="row">
+      <div id="uni">
+         <img src="img/uni.png" class="img-fluid"><span style="font-size:x-large;">TRENDING UNIVERSITIES</span></img>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3" id="d">
+
+         <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+               <li data-target="#myCarousel" data-slide-to="1"></li>
+               <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ul>
+
+            <div class="carousel-inner" role="listbox">
+               <div class="item active">
+                  <div class="col-2 col-md-4 col-lg-2" id="c">
+                     <img class="img-fluid" src="img/1.png" />
+                     <a href="mit.html">
+                        <h2 style="col col-sm-11">MIT</h2>
+                     </a>
+
+                  </div>
+
+                  <div class="col-2 col-md-4 col-lg-2" id="c">
+                     <img class="img-fluid" src="img/2.png" />
+                     <a href="nyu.html">
+                        <h2 style="col col-sm-11">NYU</h2>
+                     </a>
+
+                  </div>
+
+                  <div class="col-2 col-md-4 col-lg-2" id="c">
+                     <img class="img-fluid" src="img/3.png" />
+                     <a href="oxford.html">
+                        <h2 style="col col-sm-11">Oxford University</h2><br>
+                     </a>
+
+                  </div>
+
+                  <div class="col-2 col-md-4 col-lg-2" id="c">
+                     <img class="img-fluid" src="img/4.png" />
+                     <a href="cambridge.html">
+                        <h2 style="col col-sm-11">Cambridge University</h2>
+                     </a>
+
+                  </div>
+
+               </div>
+               <div class="item">
+                  <div class="col-2 col-md-4 col-lg-2" id="c">
+                     <img class="img-fluid" src="img/5.jpg" />
+                     <a href="southampton.html">
+                        <h2 style="col col-sm-11">U Southampton</h2>
+                     </a>
+
+                  </div>
+
+                  <div class="col-2 col-md-4 col-lg-2" id="c">
+                     <img class="img-fluid" src="img/7.png" />
+                     <a href="psu.html">
+                        <h2 style="col col-sm-11">Portland SU</h2>
+                     </a>
+
+                  </div>
+
+
+                  <div class="col-2 col-md-4 col-lg-2" id="c">
+                     <img class="img-fluid" src="img/9.png" />
+                     <a href="solent.html">
+                        <h2 style="col col-sm-11">Solent University</h2>
+                     </a>
+
+                  </div>
+
+                  <div class="col-2 col-md-4 col-lg-2" id="c">
+                     <img class="img-fluid" src="img/10.jpeg" />
+                     <a href="umbc.html">
+                        <h2 style="col col-sm-11">UM Baltimore County</h2>
+                     </a>
+
+                  </div>
+
+               </div>
+               <div class="item">
+                  <div class="col-2 col-md-4 col-lg-2" id="c">
+                     <img style="col-sm-1" class="img-fluid" src="img/11.png" />
+                     <a href="ut.html">
+                        <h2 style="col col-sm-11">University Of Texas</h2>
+                     </a>
+
+                  </div>
+
+                  <div class="col-2 col-md-4 col-lg-2" id="c">
+                     <img class="img-fluid" src="img/12.jpg" />
+                     <a href="lancaster.html">
+                        <h2 style="col col-sm-11">Lancaster U</h2>
+                     </a>
+
+                  </div>
+
+                  <div class="col-2 col-md-4 col-lg-2" id="c">
+                     <img class="img-fluid" src="img/13.png" />
+                     <a href="sussex.html">
+                        <h2 style="col col-sm-11">U Sussex</h2>
+                     </a>
+
+                  </div>
+
+                  <div class="col-2 col-md-4 col-lg-2" id="c">
+                     <img class="img-fluid" src="img/15.png" />
+                     <a href="coventry.html">
+                        <h2 style="col col-sm-11">U Coventry</h2>
+                     </a>
+
+                  </div>
+
+               </div>
+            </div>
+
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev" id="a">
+               <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+               <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next" id="a">
+               <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+               <span class="sr-only">Next</span>
+            </a>
+         </div>
+      </div>
+   </main><br><br>
+   <br><br><br><br>
+   <br><br><br><br>
+
+
+   <div id="uni">
+      <img src="img/articlefront.png" class="img-fluid" />
+   </div>
+   <main class="row" id="article">
+      <section class="col-12 col-md-4 col-lg-3">
+         <img style="col-sm-1" class="img-fluid" src="img/sop.png" />
+         <h2 style="col col-sm-11"><a href="sop.html">Mistakes in Writing SOP & Essays</a></h2>
+      </section>
+      <section class="col-12 col-md-4 col-lg-3">
+         <img style="col-sm-1" class="img-fluid" src="img/lor.png" />
+         <h2 style="col col-sm-11"><a href="lor.html">Letter Of Recommendation</a></h2>
+      </section>
+      <section class="col-12 col-md-4 col-lg-3">
+         <img style="col-sm-1" class="img-fluid" src="img/gre.jpg" />
+         <h2 style="col col-sm-11;"><a href="gre.html">Graduate Record Examination</a></h2>
+      </section>
+
+   </main><br>
+
+</body>
+
 </html>
