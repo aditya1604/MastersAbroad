@@ -2,7 +2,7 @@
 $email = $_POST['email'];
 $newpass = $_POST['pass'];
 
-try {
+
     $conn = new PDO("mysql:host=localhost;dbname=Q14980258;", "Q14980258", "aetoorau");
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -17,11 +17,6 @@ try {
 
     // echo a message to say the UPDATE succeeded
     echo $stmt->rowCount() . " records UPDATED successfully";
-    }
-catch(PDOException $e)
-    {
-    echo $sql . "<br>" . $e->getMessage();
-    }
-
+   
 $conn = null;
 ?>
