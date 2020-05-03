@@ -1,8 +1,8 @@
 <?php
 
 // Grab User submitted information
-$email = $_POST["email"];
-$pass = $_POST["pass"];
+$email = $_POST['email'];
+$pass = $_POST['pass'];
 echo "$email $pass";
 // Connect to the database
 $conn = new PDO("mysql:host=localhost;dbname=Q14980258;", "Q14980258", "aetoorau");
