@@ -1,19 +1,18 @@
 <?php
 
-// Grab User submitted information
+
 $email = $_POST['email'];
 $pass = $_POST['pass'];
-echo "$email $pass";
-// Connect to the database
+
+
 $conn = new PDO("mysql:host=localhost;dbname=Q14980258;", "Q14980258", "aetoorau");
 
 
 $result = "SELECT email, pass FROM signup WHERE email = $email and pass = $pass";
 $stmt = $conn->prepare($result);
-$stmt->bindValue(':email', $email);
-$stmt->bindValue(':pass', $pass);
+
     
-    $stmt->execute();
+    $stmt->execute([$email, $pass]);
 
        $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
