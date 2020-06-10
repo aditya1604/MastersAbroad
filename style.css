@@ -1,32 +1,13 @@
 body {
   background-image: url(img/home.jpeg);
-  background-repeat: no-repeat;
   background-size: 1800px 750px;
 }
 h1 {
   font-style: italic;
   margin-left: 0%;
 }
-ul {
-    list-style-type: none;
-    overflow: hidden;
-    background-color: transparent;
-    position: sticky;
-    top: 0;
-    float: right;
-}
-ul li {
-    display: inline;
-    border-style: none;
-    padding: 14px 18px;
-    text-decoration: none;
-    font-style: italic;
-}
-#d {
-    border-style: none;
-    width: 1100px;
-    margin-left: 10%;
-}
+
+
 #c {
     margin-top: 4%;
     margin-right: 2%;
@@ -34,15 +15,6 @@ ul li {
     padding: 4px;
     padding-right: 19%;
     border-style: outset;
-}
-#a {
-    width: 0px;
-    background-color:none;
-    
-}
-.carousel-inner {
-  margin-top: 0%;
-    
 }
 #lg {
     font-size: x-large;
@@ -57,11 +29,13 @@ section {
     width: 10%;
     padding-top: 2%;
     margin-right: 2%;
-    border-style: ridge;
+    border-style: none;
 }
 #article {
   padding-top: 2%;
   padding-left: 10%;
+  text-decoration: none;
+
 }
 #button {
     background-color: #4CAF50;
@@ -82,20 +56,28 @@ section {
     margin-right: 30px;
 }
 
-.carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-    width: 200%;
-    margin: auto;
-  }
-#myCarousel {
-margin-left: 2%;
-}
 #section {
 width: 100%;
 margin: 2%;
 border-style: ridge;
 border-color: palevioletred;
 background-color: whitesmoke;
+}
+/*nav bar*/
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  float: right;
+}
+ul li {
+  display: inline;
+  border-style: none;
+  padding: 14px 18px;
+  text-decoration: none;
+  font-style: italic;
 }
 #navbarSupportedContent .btn-outline-success {
   color: transparent;

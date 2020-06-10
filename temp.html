@@ -1,298 +1,113 @@
 <!DOCTYPE html>
-<style>
-  @keyframes tonext {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: 100%;
-  }
-  98% {
-    left: 100%;
-  }
-  99% {
-    left: 0;
-  }
-}
+<html lang="en">
 
-@keyframes tostart {
-  75% {
-    left: 0;
-  }
-  95% {
-    left: -300%;
-  }
-  98% {
-    left: -300%;
-  }
-  99% {
-    left: 0;
-  }
-}
+<head>
+  <title>Masters Abroad</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-@keyframes snap {
-  96% {
-    scroll-snap-align: center;
-  }
-  97% {
-    scroll-snap-align: none;
-  }
-  99% {
-    scroll-snap-align: none;
-  }
-  100% {
-    scroll-snap-align: center;
-  }
-}
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" id="header">
+    <h1>
+      <a id="masters" href="index.html" style="color:wheat;">Masters Abroad</a>
+    </h1>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><a href="index.html">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="universities.html">UNIVERSITIES</a></li>
+        <li class="nav-item"><a class="nav-link" href="articles.html">ARTICLES</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">LOGIN</a></li>
+        <li class="nav-item"><a class="nav-link" href="signup.html">SIGNUP</a></li>
+      </ul>
+    </div>
+  </nav><br><br>
 
-body {
-  max-width: 37.5rem;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-  font-family: 'Lato', sans-serif;
-}
+  <br><br><br><br><br>
+  <main class="row">
+    <div style="margin-left: 5%;">
+      <img src="img/trenduni.png" alt="university" class="img-fluid" /><span
+        style="font-size:large; margin-left: 1%;">TRENDING
+        UNIVERSITIES</span>
+    </div>
 
-* {
-  box-sizing: border-box;
-  scrollbar-color: transparent transparent; /* thumb and track color */
-  scrollbar-width: 0px;
-}
+    <div class="col-2 col-md-4 col-lg-2" id="article">
+      <a href="mit.html">
+        <img class="img-fluid" alt="mit" src="img/1.png" />
+        <h2>MIT</h2>
+      </a>
 
-*::-webkit-scrollbar {
-  width: 0;
-}
+    </div>
 
-*::-webkit-scrollbar-track {
-  background: transparent;
-}
+    <div class="col-2 col-md-4 col-lg-2" id="article">
+      <a href="nyu.html">
+        <img class="img-fluid" alt="nyu" src="img/2.png" />
+        <h2>NYU</h2>
+      </a>
 
-*::-webkit-scrollbar-thumb {
-  background: transparent;
-  border: none;
-}
+    </div>
 
-* {
-  -ms-overflow-style: none;
-}
+    <div class="col-2 col-md-4 col-lg-2" id="article">
+      <a href="oxford.html">
+        <img class="img-fluid" alt="oxford" src="img/3.png" />
+        <h2>Oxford University</h2><br>
+      </a>
 
-ol, li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    </div>
 
-.carousel {
-  position: relative;
-  padding-top: 75%;
-  filter: drop-shadow(0 0 10px #0003);
-  perspective: 100px;
-}
+    <div class="col-2 col-md-4 col-lg-2" id="article">
+      <a href="cambridge.html">
+        <img class="img-fluid" alt="cambridge uni" src="img/4.png" />
+        <h2>Cambridge University</h2>
+      </a>
 
-.carousel__viewport {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  overflow-x: scroll;
-  counter-reset: item;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-}
+    </div>
+  </main>
+  
+  <div id="uni" style="margin-left: 5%;">
 
-.carousel__slide {
-  position: relative;
-  flex: 0 0 100%;
-  width: 100%;
-  background-color: #f99;
-  counter-increment: item;
-}
+    <img alt="article" src="img/articlefront.png" class="img-fluid" /><span style="font-size:large; color:black; margin-left: 1%;">TRENDING
+      ARTICLES</span>
+  </div>
+  <div class="row" id="article">
+    <section class="col-12 col-md-4 col-lg-3">
+      <a href="sop.html">
+      <img alt="sop and essay" class="img-fluid" src="img/sop.png" />
+      <h2>Mistakes in Writing SOP & Essays</h2></a>
+    </section>
+    <section class="col-12 col-md-4 col-lg-3">
+      <a href="lor.html">
+      <img alt="lor" class="img-fluid" src="img/lor.png" />
+      <h2>Letter Of Recommendation</h2></a>
+    </section>
+    <section class="col-12 col-md-4 col-lg-3">
+      <a href="gre.html">
+      <img alt="gre" class="img-fluid" src="img/gre.jpg" />
+      <h2>Graduate Record Examination</h2></a>
+    </section>
 
-.carousel__slide:nth-child(even) {
-  background-color: #99f;
-}
+  </div><br>
+  <div class="footer row">
 
-.carousel__slide:before {
-  content: counter(item);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%,-40%,70px);
-  color: #fff;
-  font-size: 2em;
-}
+    <div class="siteinfo col-md-4">
+      <p>Masters Abroad<br>Created by <a href="mailto:4surya58@solent.ac.uk">Aditya Suryawanshi &copy;</a></p>
+    </div>
 
-.carousel__snapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  scroll-snap-align: center;
-}
+    <div class="socialmedia col-md-8">
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-google"></a>
+      <a href="#" class="fa fa-linkedin"></a>
+      <a href="#" class="fa fa-youtube"></a>
+      <a href="#" class="fa fa-instagram"></a>
+    </div>
+  </div>
 
-@media (hover: hover) {
-  .carousel__snapper {
-    animation-name: tonext, snap;
-    animation-timing-function: ease;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-  }
+</body>
 
-  .carousel__slide:last-child .carousel__snapper {
-    animation-name: tostart, snap;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .carousel__snapper {
-    animation-name: none;
-  }
-}
-
-.carousel:hover .carousel__snapper,
-.carousel:focus-within .carousel__snapper {
-  animation-name: none;
-}
-
-.carousel__navigation {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-}
-
-.carousel__navigation-list,
-.carousel__navigation-item {
-  display: inline-block;
-}
-
-.carousel__navigation-button {
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: #333;
-  background-clip: content-box;
-  border: 0.25rem solid transparent;
-  border-radius: 50%;
-  font-size: 0;
-  transition: transform 0.1s;
-}
-
-.carousel::before,
-.carousel::after,
-.carousel__prev,
-.carousel__next {
-  position: absolute;
-  top: 0;
-  margin-top: 37.5%;
-  width: 4rem;
-  height: 4rem;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  font-size: 0;
-  outline: 0;
-}
-
-.carousel::before,
-.carousel__prev {
-  left: -1rem;
-}
-
-.carousel::after,
-.carousel__next {
-  right: -1rem;
-}
-
-.carousel::before,
-.carousel::after {
-  content: '';
-  z-index: 1;
-  background-color: #333;
-  background-size: 1.5rem 1.5rem;
-  background-repeat: no-repeat;
-  background-position: center center;
-  color: #fff;
-  font-size: 2.5rem;
-  line-height: 4rem;
-  text-align: center;
-  pointer-events: none;
-}
-
-.carousel::before {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,50 80,100 80,0' fill='%23fff'/%3E%3C/svg%3E");
-}
-
-.carousel::after {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
-}
-</style>
-<html lang="eng">
-<h1>CSS-only Carousel</h1>
-
-<p>This carousel is created with HTML and CSS only.</p>
-
-<section class="carousel" aria-label="Gallery">
-  <ol class="carousel__viewport">
-    <li id="carousel__slide1"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper">
-        <a href="#carousel__slide4"
-           class="carousel__prev">Go to last slide</a>
-        <a href="#carousel__slide2"
-           class="carousel__next">Go to next slide</a>
-      </div>
-    </li>
-    <li id="carousel__slide2"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide1"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide3"
-         class="carousel__next">Go to next slide</a>
-    </li>
-    <li id="carousel__slide3"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide2"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide4"
-         class="carousel__next">Go to next slide</a>
-    </li>
-    <li id="carousel__slide4"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide3"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide1"
-         class="carousel__next">Go to first slide</a>
-    </li>
-  </ol>
-  <aside class="carousel__navigation">
-    <ol class="carousel__navigation-list">
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide1"
-           class="carousel__navigation-button">Go to slide 1</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide2"
-           class="carousel__navigation-button">Go to slide 2</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide3"
-           class="carousel__navigation-button">Go to slide 3</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide4"
-           class="carousel__navigation-button">Go to slide 4</a>
-      </li>
-    </ol>
-  </aside>
-</section>
 </html>
