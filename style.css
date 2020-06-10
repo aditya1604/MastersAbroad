@@ -164,6 +164,7 @@ color: white;
   text-align: center;
   text-decoration: none;
   float: right;
+  border-radius: 50%;
 }
 
 .footer .fa:hover {
