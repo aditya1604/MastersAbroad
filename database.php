@@ -1,7 +1,10 @@
-<?php
-   define('DB_SERVER', 'localhost');
-   define('DB_USERNAME', 'Q14980258');
-   define('DB_PASSWORD', 'aetoorau');
-   define('DB_DATABASE', 'Q14980258');
-   $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+
+<?php 
+try {
+  $db = new PDO('mysql:host=localhost;dbname=Q14980258;charset=utf8mb4', 'Q14980258', 'aetoorau');
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);  
+} catch (PDOException $e) {
+  echo "Connection failed : ". $e->getMessage();
+}
 ?>

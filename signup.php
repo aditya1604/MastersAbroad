@@ -13,7 +13,7 @@ $pass = $_POST['pass'];
          values(?, ?, ?, ?)");
 
         $stmt->execute([$firstname, $lastname, $email, $pass]);
-        echo "data enetered successfully";
+        header('Location:user.html');
        
        
     }
