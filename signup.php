@@ -13,9 +13,8 @@ $pass = $_POST['pass'];
          values(?, ?, ?, ?)");
 
         $stmt->execute([$firstname, $lastname, $email, $pass]);
-        header('Location:user.html');
-       
-       
+        header('Location:user.php');
+  
     }
   
 ?>
