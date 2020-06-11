@@ -1,5 +1,12 @@
 <?php
-   include('session.php');
+session_start();
+
+if(isset($_SESSION['username'])) {
+
+} else {
+header('location: login.php');
+}
+
 ?>
 <!DOCTYPE html>
 <html>

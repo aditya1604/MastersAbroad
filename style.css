@@ -46,11 +46,7 @@ section {
     cursor: pointer;
     width: 40%;
   }
-#t {
-    color: black;
-    width: 50%;
-    height: 50px;
-}
+
 #img {
     margin-top: 20px;
     margin-right: 30px;
