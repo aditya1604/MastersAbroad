@@ -58,8 +58,7 @@ if($query->rowCount() > 0) {
         <li class="nav-item"><a class="nav-link" href="signup.html">SIGNUP</a></li>
       </ul>
     </div>
-  </nav><br><br>
-  <br><br><br>
+  </nav>
 <?php
 if(isset($message)) {
 echo $message;
@@ -79,7 +78,7 @@ echo $message;
 
 </form><br>
 
-<img src="img/lg.png" alt="universities" width="600" height="500" id="img">
+<img src="img/lg.png" alt="universities" width="600" height="500" id="img"><br><br><br>
 <div class="footer row">
 
     <div class="siteinfo col-md-4">

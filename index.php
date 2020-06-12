@@ -18,7 +18,7 @@ header("location: user.php");
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body >
   <nav class="navbar navbar-expand-lg navbar-light" id="header">
     <h1>
       <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>

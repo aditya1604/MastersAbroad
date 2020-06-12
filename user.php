@@ -9,6 +9,20 @@ if(isset($_SESSION['username'])) {
 <html>
 
 <head>
+<style>
+    #s {
+      width: 20%;
+      padding-top: 1%;
+      margin-right: 2%;
+      border-style: ridge;
+      font-size: x-large;
+    }
+
+    #ar {
+      padding-top: 2%;
+      padding-left: 10%;
+    }
+  </style>
    <title>Welcome </title>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +34,7 @@ if(isset($_SESSION['username'])) {
 </head>
 
 
-<body background="img/home.jpeg">
+<body style="background-image:none;" >
    <nav class="navbar navbar-expand-lg navbar-light" id="header">
       <h1>
          <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>
@@ -28,55 +42,61 @@ if(isset($_SESSION['username'])) {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav mr-auto">
             <li class="nav-item active"><a href="index.php">HOME</a></li>
-            <li class="nav-item"><a class="nav-link" href="universities.html">UNIVERSITIES</a></li>
-            <li class="nav-item"><a class="nav-link" href="articles.html">ARTICLES</a></li>
             <li class="nav-item"><a class="nav-link" href="update_password.html">Update Password</a></li>
             <li class="nav-item"><a class="nav-link" href="logout.php" >SIGN OUT</a></li>
          </ul>
       </div>
-   </nav><br><br>
-   <br><br><br><br><br>
-   <main class="row">
-      <div style="margin-left: 5%;">
+   </nav>
+   <main class="row" id="ar">
+      <div>
         <img src="img/trenduni.png" alt="university" class="img-fluid" /><span
           style="font-size:large; margin-left: 1%;">TRENDING
           UNIVERSITIES</span>
-      </div>
+      </div><br>
   
-      <div class="col-2 col-md-4 col-lg-2" id="article">
-        <a href="mit.html">
-          <img class="img-fluid" alt="mit" src="img/1.png" />
-          <h2>MIT</h2>
-        </a>
-  
-      </div>
-  
-      <div class="col-2 col-md-4 col-lg-2" id="article">
-        <a href="nyu.html">
-          <img class="img-fluid" alt="nyu" src="img/2.png" />
-          <h2>NYU</h2>
-        </a>
-  
-      </div>
-  
-      <div class="col-2 col-md-4 col-lg-2" id="article">
-        <a href="oxford.html">
-          <img class="img-fluid" alt="oxford" src="img/3.png" />
-          <h2>Oxford University</h2><br>
-        </a>
-  
-      </div>
-  
-      <div class="col-2 col-md-4 col-lg-2" id="article">
-        <a href="cambridge.html">
-          <img class="img-fluid" alt="cambridge uni" src="img/4.png" />
-          <h2>Cambridge University</h2>
-        </a>
-  
-      </div>
+      <section class="col-12 col-md-4 col-lg-3" id="s">
+      <a href="nyu.html">
+      <img  alt="nyu" class="img-fluid" src="img/2.png" />
+      <h2 >New York University</h2></a>
+    </section>
+    <section class="col-12 col-md-4 col-lg-3" id="s">
+      <a href="oxford.html">
+      <img  alt="oxford" class="img-fluid" src="img/3.png" />
+      <h2 >University Of Oxford</h2></a>
+    </section>
+    <section class="col-12 col-md-4 col-lg-3" id="s">
+      <a href="cambridge.html">
+      <img  alt="cambridge" class="img-fluid" src="img/4.png" />
+      <h2 >Cambridge University</h2></a>
+    </section>
+    <section class="col-12 col-md-4 col-lg-3" id="s">
+      <a href="mit.html">
+      <img  alt="mit" class="img-fluid" src="img/1.png" />
+      <h2 >Massachusetts Institute of Technology</h2></a>
+    </section>
+    <section class="col-12 col-md-4 col-lg-3" id="s">
+      <a href="coventry.html">
+      <img  alt="coventry" class="img-fluid" src="img/15.png" />
+      <h2 >Coventry University</h2></a>
+    </section>
+    <section class="col-12 col-md-4 col-lg-3" id="s">
+      <a href="psu.html">
+      <img  alt="psu" class="img-fluid" src="img/7.png" />
+      <h2 >Portland State University</h2></a>
+    </section>
+    <section class="col-12 col-md-4 col-lg-3" id="s">
+      <a href="umbc.html">
+      <img  alt="umbc" class="img-fluid" src="img/10.jpeg" />
+      <h2 >University Of Marlyland Baltimore County</h2></a>
+    </section>
+    <section class="col-12 col-md-4 col-lg-3" id="s">
+      <a href="ut.html">
+      <img  alt="texas" class="img-fluid" src="img/11.png" />
+      <h2 >University Of Texas</h2></a>
+    </section>
     </main>
     
-    <div id="uni" style="margin-left: 5%;">
+    <div id="uni" style="margin-left: 8%;">
   
       <img alt="article" src="img/articlefront.png" class="img-fluid" /><span style="font-size:large; color:black; margin-left: 1%;">TRENDING
         ARTICLES</span>
@@ -97,8 +117,14 @@ if(isset($_SESSION['username'])) {
         <img alt="gre" class="img-fluid" src="img/gre.jpg" />
         <h2>Graduate Record Examination</h2></a>
       </section>
-  
+      <section class="col-12 col-md-4 col-lg-3">
+            <a href="ambi.html">
+                <img style="col-sm-1;" class="img-fluid" src="img/ambi.jpeg" />
+                <h2>Ambitious, Moderate or Safe University</h2>
+            </a>
+        </section>
     </div><br>
+  
     <div class="footer row">
 
       <div class="siteinfo col-md-4">
