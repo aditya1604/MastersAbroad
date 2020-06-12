@@ -25,7 +25,7 @@ header("location: user.php");
     </h1>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"><a href="index.html">HOME</a></li>
+        <li class="nav-item active"><a href="index.php">HOME</a></li>
         <li class="nav-item"><a class="nav-link" href="universities.html">UNIVERSITIES</a></li>
         <li class="nav-item"><a class="nav-link" href="articles.html">ARTICLES</a></li>
         <li class="nav-item"><a class="nav-link" href="login.php">LOGIN</a></li>
@@ -34,7 +34,6 @@ header("location: user.php");
     </div>
   </nav><br><br>
 
-  <br><br><br><br><br>
   <main class="row">
     <div style="margin-left: 5%;">
       <img src="img/trenduni.png" alt="university" class="img-fluid" /><span
