@@ -3,7 +3,7 @@
 require 'database.php';
 
 $email = $_POST['email'];
-$pass = $_POST['email'];
+$pass = $_POST['pass'];
 
 try {
   
@@ -18,6 +18,10 @@ try {
 
   // echo a message to say the UPDATE succeeded
   echo $stmt->rowCount() . " records UPDATED successfully";
+  session_start();
+session_destroy();
+
+header('location: login.php');
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }

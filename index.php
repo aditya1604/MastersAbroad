@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION['username'])){
+header("location: user.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +21,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light" id="header">
     <h1>
-      <a id="masters" href="index.html" style="color:wheat;">Masters Abroad</a>
+      <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>
     </h1>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">

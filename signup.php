@@ -3,8 +3,8 @@ $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 $email = $_POST['email'];
 $pass = $_POST['pass'];
-    echo "<h1>$firstname $lastname $email $pass</h1>";
-    $conn = new PDO("mysql:host=localhost;dbname=Q14980258;", "Q14980258", "aetoorau");
+
+    require 'database.php';
     if($conn->connect_error) {
         die('Connection Failed :'.$conn->connect_error);
     }
@@ -13,7 +13,8 @@ $pass = $_POST['pass'];
          values(?, ?, ?, ?)");
 
         $stmt->execute([$firstname, $lastname, $email, $pass]);
-        header('Location:user.php');
+
+        header('location: user.php');
   
     }
   
