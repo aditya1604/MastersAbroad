@@ -1,141 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <title>Masters Abroad</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
 </head>
-
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light" id="header">
-    <h1>
-      <a id="masters" href="index.html" style="color:wheat;">Masters Abroad</a>
-    </h1>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"><a href="index.html">HOME</a></li>
-        <li class="nav-item"><a class="nav-link" href="universities.html">UNIVERSITIES</a></li>
-        <li class="nav-item"><a class="nav-link" href="articles.html">ARTICLES</a></li>
-        <li class="nav-item"><a class="nav-link" href="login.html">LOGIN</a></li>
-        <li class="nav-item"><a class="nav-link" href="signup.html">SIGNUP</a></li>
-      </ul>
-    </div>
-  </nav><br><br>
 
-  <br><br><br><br><br>
-  <main class="row">
-    <div style="margin-left: 5%;">
-      <img src="img/trenduni.png" alt="university" class="img-fluid" /><span
-        style="font-size:large; margin-left: 1%;">TRENDING
-        UNIVERSITIES</span>
-    </div>
+<h2>Popup Chat Window</h2>
+<p>Click on the button at the bottom of this page to open the chat form.</p>
+<p>Note that the button and the form is fixed - they will always be positioned to the bottom of the browser window.</p>
 
-    <div class="col-2 col-md-4 col-lg-2" id="article">
-      <a href="mit.html">
-        <img class="img-fluid" alt="mit" src="img/1.png" />
-        <h2>MIT</h2>
-      </a>
+<button class="open-button" onclick="openForm()">Chat</button>
 
-    </div>
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Chat</h1>
 
-    <div class="col-2 col-md-4 col-lg-2" id="article">
-      <a href="nyu.html">
-        <img class="img-fluid" alt="nyu" src="img/2.png" />
-        <h2>NYU</h2>
-      </a>
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
 
-    </div>
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
 
-    <div class="col-2 col-md-4 col-lg-2" id="article">
-      <a href="oxford.html">
-        <img class="img-fluid" alt="oxford" src="img/3.png" />
-        <h2>Oxford University</h2><br>
-      </a>
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
 
-    </div>
-
-    <div class="col-2 col-md-4 col-lg-2" id="article">
-      <a href="cambridge.html">
-        <img class="img-fluid" alt="cambridge uni" src="img/4.png" />
-        <h2>Cambridge University</h2>
-      </a>
-
-    </div>
-  </main>
-  
-  <div id="uni" style="margin-left: 5%;">
-
-    <img alt="article" src="img/articlefront.png" class="img-fluid" /><span style="font-size:large; color:black; margin-left: 1%;">TRENDING
-      ARTICLES</span>
-  </div>
-  <div class="row" id="article">
-    <section class="col-12 col-md-4 col-lg-3">
-      <a href="sop.html">
-      <img alt="sop and essay" class="img-fluid" src="img/sop.png" />
-      <h2>Mistakes in Writing SOP & Essays</h2></a>
-    </section>
-    <section class="col-12 col-md-4 col-lg-3">
-      <a href="lor.html">
-      <img alt="lor" class="img-fluid" src="img/lor.png" />
-      <h2>Letter Of Recommendation</h2></a>
-    </section>
-    <section class="col-12 col-md-4 col-lg-3">
-      <a href="gre.html">
-      <img alt="gre" class="img-fluid" src="img/gre.jpg" />
-      <h2>Graduate Record Examination</h2></a>
-    </section>
-
-  </div><br>
-  <div class="footer row">
-
-    <div class="siteinfo col-md-4">
-      <p>Masters Abroad<br>Created by <a href="mailto:4surya58@solent.ac.uk">Aditya Suryawanshi &copy;</a></p>
-    </div>
-
-    <div class="socialmedia col-md-8">
-      <a href="#" class="fa fa-facebook"></a>
-      <a href="#" class="fa fa-twitter"></a>
-      <a href="#" class="fa fa-google"></a>
-      <a href="#" class="fa fa-linkedin"></a>
-      <a href="#" class="fa fa-youtube"></a>
-      <a href="#" class="fa fa-instagram"></a>
-    </div>
-  </div>
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
 
 </body>
-
 </html>
-
-<?php
-
-
-$email = $_POST['email'];
-$pass = $_POST['pass'];
-
-
-$conn = new PDO("mysql:host=localhost;dbname=Q14980258;", "Q14980258", "aetoorau");
-
-
-$result = "SELECT email, pass FROM signup WHERE email = $email and pass = $pass";
-$stmt = $conn->prepare($result);
-
-    
-    $stmt->execute([$email, $pass]);
-
-       $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-   if($row["email"]==$email && $row["pass"]==$pass) {
-   header("Location: user.html");
-   session_start();
-$_SESSION["uid"] = $result["id"];
-   }
-   else {
-    echo"Sorry, your credentials are not valid, Please try again.";
-   }
-?>
