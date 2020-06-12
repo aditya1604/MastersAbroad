@@ -9,6 +9,9 @@ try {
   // use exec() because no results are returned
   $conn->exec($sql);
   echo "Record deleted successfully";
+  session_start();
+session_destroy();
+header('location: login.php');
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
