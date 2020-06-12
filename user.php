@@ -37,11 +37,11 @@ if(isset($_SESSION['username'])) {
 <body style="background-image:none;" >
    <nav class="navbar navbar-expand-lg navbar-light" id="header">
       <h1>
-         <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>
+         <a id="masters" href="user.php" style="color:wheat;">Masters Abroad</a>
        </h1>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a href="index.php">HOME</a></li>
+            <li class="nav-item active"><a href="user.php">HOME</a></li>
             <li class="nav-item"><a class="nav-link" href="update_password.html">Update Password</a></li>
             <li class="nav-item"><a class="nav-link" href="logout.php" >SIGN OUT</a></li>
          </ul>
