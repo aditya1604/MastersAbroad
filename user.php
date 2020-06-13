@@ -87,7 +87,7 @@ if(isset($_SESSION['username'])) {
 
       <section class="col-12 col-md-4 col-lg-3">
         <a href="gre.html">
-        <img alt="gre" class="img-fluid" src="img/gre.jpg" />
+        <img alt="gre" class="img-fluid" src="img/gre1.jpeg" />
         <h2>Graduate Record Examination</h2></a>
       </section>
       <section class="col-12 col-md-4 col-lg-3">
