@@ -26,8 +26,6 @@ header("location: user.php");
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active"><a href="index.php">HOME</a></li>
-        <li class="nav-item"><a class="nav-link" href="universities.html">UNIVERSITIES</a></li>
-        <li class="nav-item"><a class="nav-link" href="articles.html">ARTICLES</a></li>
         <li class="nav-item"><a class="nav-link" href="login.php">LOGIN</a></li>
         <li class="nav-item"><a class="nav-link" href="signup.html">SIGNUP</a></li>
       </ul>
@@ -82,18 +80,13 @@ header("location: user.php");
   <div class="row" id="article">
     <section class="col-12 col-md-4 col-lg-3">
       <a href="sop.html">
-      <img alt="sop and essay" class="img-fluid" src="img/sop.png" />
+      <img alt="sop and essay" class="img-fluid" src="img/sop1.jpeg" />
       <h2>Mistakes in Writing SOP & Essays</h2></a>
     </section>
     <section class="col-12 col-md-4 col-lg-3">
       <a href="lor.html">
       <img alt="lor" class="img-fluid" src="img/lor.png" />
       <h2>Letter Of Recommendation</h2></a>
-    </section>
-    <section class="col-12 col-md-4 col-lg-3">
-      <a href="gre.html">
-      <img alt="gre" class="img-fluid" src="img/gre.jpg" />
-      <h2>Graduate Record Examination</h2></a>
     </section>
 
   </div><br>

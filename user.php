@@ -42,6 +42,8 @@ if(isset($_SESSION['username'])) {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav mr-auto">
             <li class="nav-item active"><a href="user.php">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="universities.html">UNIVERSITIES</a></li>
+            <li class="nav-item"><a class="nav-link" href="articles.html">ARTICLES</a></li>
             <li class="nav-item"><a class="nav-link" href="update_password.html">Update Password</a></li>
             <li class="nav-item"><a class="nav-link" href="logout.php" >SIGN OUT</a></li>
          </ul>
@@ -53,27 +55,7 @@ if(isset($_SESSION['username'])) {
           style="font-size:large; margin-left: 1%;">TRENDING
           UNIVERSITIES</span>
       </div><br>
-  
-      <section class="col-12 col-md-4 col-lg-3" id="s">
-      <a href="nyu.html">
-      <img  alt="nyu" class="img-fluid" src="img/2.png" />
-      <h2 >New York University</h2></a>
-    </section>
-    <section class="col-12 col-md-4 col-lg-3" id="s">
-      <a href="oxford.html">
-      <img  alt="oxford" class="img-fluid" src="img/3.png" />
-      <h2 >University Of Oxford</h2></a>
-    </section>
-    <section class="col-12 col-md-4 col-lg-3" id="s">
-      <a href="cambridge.html">
-      <img  alt="cambridge" class="img-fluid" src="img/4.png" />
-      <h2 >Cambridge University</h2></a>
-    </section>
-    <section class="col-12 col-md-4 col-lg-3" id="s">
-      <a href="mit.html">
-      <img  alt="mit" class="img-fluid" src="img/1.png" />
-      <h2 >Massachusetts Institute of Technology</h2></a>
-    </section>
+
     <section class="col-12 col-md-4 col-lg-3" id="s">
       <a href="coventry.html">
       <img  alt="coventry" class="img-fluid" src="img/15.png" />
@@ -102,16 +84,7 @@ if(isset($_SESSION['username'])) {
         ARTICLES</span>
     </div>
     <div class="row" id="article">
-      <section class="col-12 col-md-4 col-lg-3">
-        <a href="sop.html">
-        <img alt="sop and essay" class="img-fluid" src="img/sop.png" />
-        <h2>Mistakes in Writing SOP & Essays</h2></a>
-      </section>
-      <section class="col-12 col-md-4 col-lg-3">
-        <a href="lor.html">
-        <img alt="lor" class="img-fluid" src="img/lor.png" />
-        <h2>Letter Of Recommendation</h2></a>
-      </section>
+
       <section class="col-12 col-md-4 col-lg-3">
         <a href="gre.html">
         <img alt="gre" class="img-fluid" src="img/gre.jpg" />
