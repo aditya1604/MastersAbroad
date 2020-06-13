@@ -16,7 +16,7 @@ color: #588c7e;
 font-family: monospace;
 font-size: 25px;
 text-align: left;
-float : center;
+margin-left: 5%;
 }
 th {
 background-color: #588c7e;
@@ -44,7 +44,7 @@ tr:nth-child(even) {background-color: #f2f2f2}
             <li class="nav-item"><a class="nav-link" href="adminlogout.php" >SIGN OUT</a></li>
          </ul>
       </div>
-  </nav>
+  </nav><br><br>
   <main class="conatiner">
 <?php
 echo "<table style='border: solid 1px black;'>";
@@ -90,7 +90,7 @@ echo "</table>";
 ?>
 </main>
 <br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
 <div class="footer row">
 
 <div class="siteinfo col-md-4">
