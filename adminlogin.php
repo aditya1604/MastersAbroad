@@ -24,6 +24,7 @@ if($query->rowCount() > 0) {
   header('location:admin.php');
 } else {
   $message = "Username/Password is wrong";
+  echo "<script type='text/javascript'>alert('$message');</script>";
 }
 
 
@@ -51,11 +52,7 @@ if($query->rowCount() > 0) {
     </h1>
    
   </nav>
-<?php
-if(isset($message)) {
-echo $message;
-}
-?>
+
 <main class="container">
 <form id="lg" action="#" method="post">
 <h1>Admin Login</h1><br>
