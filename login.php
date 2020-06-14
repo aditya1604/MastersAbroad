@@ -1,34 +1,32 @@
 <?php
-session_start();
-if(!empty($_SESSION['username'])) {
-header('location:user.php');
-}
-require 'database.php';
-
-
-if(isset($_POST['login'])) {
-
-$user = $_POST['username'];
-$pass = $_POST['password'];
-
-if(empty($user) || empty($pass)) {
-$message = 'All field are required';
-} else {
-$query = $conn->prepare("SELECT email, pass FROM signup WHERE 
-email=? AND pass=? ");
-$query->execute(array($user,$pass));
-$row = $query->fetch(PDO::FETCH_BOTH);
-
-if($query->rowCount() > 0) {
-  $_SESSION['username'] = $user;
+  session_start();
+  if(!empty($_SESSION['username'])) {
   header('location:user.php');
-} else {
-  $message = "Username/Password is wrong";
-}
+  }
+  require 'database.php';
 
+  if(isset($_POST['login'])) {
 
-}
+    $user = $_POST['username'];
+    $pass = $_POST['password'];
 
+  if(empty($user) || empty($pass)) {
+    $message = 'All field are required';
+  } 
+  else {
+    $query = $conn->prepare("SELECT email, pass FROM signup WHERE 
+    email=? AND pass=? ");
+    $query->execute(array($user,$pass));
+    $row = $query->fetch(PDO::FETCH_BOTH);
+
+  if($query->rowCount() > 0) {
+    $_SESSION['username'] = $user;
+    header('location:user.php');
+  } else {
+       $message = "Username/Password is wrong";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+  }
 }
 ?>
 
@@ -57,22 +55,19 @@ if($query->rowCount() > 0) {
       </ul>
     </div>
   </nav>
-<?php
-if(isset($message)) {
-echo $message;
-}
-?>
+
 <form id="lg" action="#" method="post">
-<h1>Login</h1><br>
-<label for="email"><b>Username</b></label><br>
-<input type="text" name="username" placeholder="email" required><br><br>
+  <h1>Login</h1><br>
 
-<label for="password"><b>Password</b></label><br>
-<input type="password" name="password" placeholder="password" require><br><br>
+  <label for="email"><b>Username</b></label><br>
+  <input type="text" name="username" placeholder="email" required><br><br>
 
-<input type="checkbox"> Remeber Me <br><br>
+  <label for="password"><b>Password</b></label><br>
+  <input type="password" name="password" placeholder="password" require><br><br>
 
-<input id="button" type="submit" name="login" value="Login">
+  <input type="checkbox"> Remeber Me <br><br>
+
+  <input id="button" type="submit" name="login" value="Login">
 
 </form><br>
 
@@ -80,7 +75,8 @@ echo $message;
 <div class="footer row">
 
     <div class="siteinfo col-md-4">
-      <p>Masters Abroad<br>Created by <a href="mailto:4surya58@solent.ac.uk">Aditya Suryawanshi &copy;</a></p>
+      <p>Masters Abroad<br>Created by <a href="mailto:4surya58@solent.ac.uk">Aditya Suryawanshi &copy;</a></p><br>
+      <a href="adminlogin.php">Admin Login</a>
     </div>
 
     <div class="socialmedia col-md-8">

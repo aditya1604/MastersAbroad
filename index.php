@@ -93,7 +93,8 @@ header("location: user.php");
   <div class="footer row">
 
     <div class="siteinfo col-md-4">
-      <p>Masters Abroad<br>Created by <a href="mailto:4surya58@solent.ac.uk">Aditya Suryawanshi &copy;</a></p>
+      <p>Masters Abroad<br>Created by <a href="mailto:4surya58@solent.ac.uk">Aditya Suryawanshi &copy;</a></p><br>
+      <a href="adminlogin.php">Admin Login</a>
     </div>
 
     <div class="socialmedia col-md-8">
