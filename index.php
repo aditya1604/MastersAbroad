@@ -26,7 +26,7 @@ header("location: user.php");
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active"><a href="index.php">HOME</a></li>
-        <li class="nav-item"><a class="nav-link" href="login.php">LOGIN</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">LOGIN</a></li>
         <li class="nav-item"><a class="nav-link" href="signup.html">SIGNUP</a></li>
       </ul>
     </div>
@@ -94,7 +94,7 @@ header("location: user.php");
 
     <div class="siteinfo col-md-4">
       <p>Masters Abroad<br>Created by <a href="mailto:4surya58@solent.ac.uk">Aditya Suryawanshi &copy;</a></p><br>
-      <a href="adminlogin.php">Admin Login</a>
+      <a href="adminlogin.html">Admin Login</a>
     </div>
 
     <div class="socialmedia col-md-8">
