@@ -23,8 +23,8 @@ if($query->rowCount() > 0) {
   $_SESSION['username'] = $user;
   header('location:admin.php');
 } else {
-  $message = "Username/Password is wrong";
-  echo "<script type='text/javascript'>alert('$message');</script>";
+  
+  echo "Username/Password is wrong";
 }
 
 
