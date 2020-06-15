@@ -21,7 +21,7 @@ try {
   session_start();
 session_destroy();
 
-header('location: login.php');
+header('location: login.html');
 } catch(PDOException $e) {
   echo $sql . "<br>" . $e->getMessage();
 }
