@@ -27,13 +27,14 @@
         <h1>
           <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>
         </h1>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a href="index.php">HOME</a></li>
-            <li class="nav-item"><a class="nav-link" href="login.html">LOGIN</a></li>
-            <li class="nav-item"><a class="nav-link" href="signup.html">SIGNUP</a></li>
-          </ul>
-        </div>
+        <div class="topnav" id="myTopnav">
+        <a href="index.php" class="active">Home</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">SIGNUP</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
       </nav>
     <main class="container">
     <h1 style="font-size: xx-large;">University of Oxford</h1><br><br>
@@ -50,44 +51,83 @@
         </p>
     </div>
     <div>
-        <img src="img/OXFORDimage.jpg" style="height:350px;" />
+        <img alt = "oxford"src="img/OXFORDimage.jpg" style="height:350px;" />
     </div><br>
 
     <hr>
 
     <h3>Engineering graduate courses offered at Oxford</h3>
-    <table style="width:60%">
-        <tr>
-            <th>Courses</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>Computer Science (MSc)
-            </td>
-            <td></td>
+<?php
+echo "<table style='border: solid 1px black; width:80%'>";
+ echo "<tr><th>Courses</th><th>Description</th></tr>";
 
-        </tr>
-        <tr>
-            <td>Engineering Project Management (Masters)
-            </td>
-            <td></td>
+class TableRows extends RecursiveIteratorIterator {
+    function __construct($it) {
+        parent::__construct($it, self::LEAVES_ONLY);
+    }
 
-        </tr>
-        <tr>
-            <td>
-                Machine Learning and Mechanical Intelligence (Mphil)
-            </td>
-            <td></td>
+    function current() {
+        return "<td style='width: 150px; border: 1px solid black;'>" . parent::current(). "</td>";
+    }
 
-        </tr>
-        <tr>
-            <td>Radiation Biology (Masters)
-            </td>
-            <td></td>
+    function beginChildren() {
+        echo "<tr>";
+    }
 
-        </tr>
-    </table>
+    function endChildren() {
+        echo "</tr>" . "\n";
+    }
+}
 
+require 'database.php';
+
+try {
+    
+    $stmt = $conn->prepare("SELECT courses, description FROM oxford");
+    $stmt->execute();
+
+    // set the resulting array to associative
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+        echo $v;
+    }
+}
+catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+$conn = null;
+echo "</table>";
+?>
+<hr>
+<h2>Comments</h2>
+<?php
+    require 'database.php';
+    try {
+    
+        $query = $conn->prepare("SELECT username, comment FROM ox_comments");
+        $query->execute();
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+        $name =  $row['username'];
+        $comment = $row['comment'];
+       
+        echo "<p style= 'font-size: 25px;'>".$name."</p>";
+       
+        echo "<p style= 'font-size: 20px;'>".$comment."</p>"; 
+        }
+        }
+    catch(PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    $conn = null;
+?>
+<form action="comment.php" method= "POST">
+    <input type="text" placeholder="Type a comment" name="comment" style= "width: 80%"><br><br>
+    <div class="input-group-append">
+            <button class="btn btn-outline-success" type="submit" href="#">Submit</button>
+    </div>
+</form>
+<hr>
     <h3>See where Oxford is located</h3> <br>
     <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10116337.684065597!2d-1.254367!3d51.754816!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd2ff1883a001afed!2sUniversity%20of%20Oxford!5e0!3m2!1sen!2sus!4v1586283021694!5m2!1sen!2sus"
@@ -109,6 +149,7 @@
               <a href="#" class="fa fa-instagram"></a>
             </div>
           </div>
+<script src = "navbar.js"></script>
 </body>
 
 </html>

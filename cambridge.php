@@ -27,13 +27,14 @@
         <h1>
             <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>
         </h1>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="index.php">HOME</a></li>
-                <li class="nav-item"><a class="nav-link" href="login.html">LOGIN</a></li>
-                <li class="nav-item"><a class="nav-link" href="signup.html">SIGNUP</a></li>
-            </ul>
-        </div>
+        <div class="topnav" id="myTopnav">
+        <a href="index.php" class="active">Home</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">SIGNUP</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
     </nav>
 
 
@@ -55,87 +56,83 @@
             </p>
         </div>
         <div>
-            <img src="img/cambridge.jpeg" style="height:350px;" />
+            <img src="img/cambridge.jpeg" alt="cambridge"style="height:350px;" />
         </div><br>
 
         <hr>
 
         <h3>Engineering graduate courses offered at Oxford</h3>
-        <table style="width:60%">
-            <tr>
-                <th>Courses</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td>Advanced Chemical Engineering (Masters)
-                </td>
-                <td></td>
+        <?php
+            echo "<table style='border: solid 1px black; width:80%'>";      
+            echo "<tr><th>Courses</th><th>Description</th></tr>";
 
-            </tr>
-            <tr>
-                <td>Advanced Computer Science (MPhil)
-                </td>
-                <td></td>
+        class TableRows extends RecursiveIteratorIterator {
+            function __construct($it) {
+            parent::__construct($it, self::LEAVES_ONLY);
+        }
 
-            </tr>
-            <tr>
-                <td>
-                    Biotechnology (MPhil)
-                </td>
-                <td></td>
+        function current() {
+            return "<td style='width: 150px; border: 1px solid black;'>" . parent::current(). "</td>";
+        }
 
-            </tr>
-            <tr>
-                <td>Chemical Engineering (BA)
-                </td>
-                <td></td>
+        function beginChildren() {
+            echo "<tr>";
+        }
 
-            </tr>
-            <tr>
-                <td>Computer Science (BA)
-                </td>
-                <td>The program is intended to furnish understudies with current software engineering, offering
-                    abilities to
-                    make future innovation. All parts of present day software engineering are secured, alongside the
-                    basic
-                    hypothesis and establishments in financial aspects, law and business. You additionally create down
-                    to
-                    earth aptitudes, for example, programming and equipment frameworks (eg chip configuration utilizing
-                    Verilog)</td>
+        function endChildren() {
+            echo "</tr>" . "\n";
+        }
+    }
 
-            </tr>
-            <tr>
-                <td>Energy Technology (Masters)
-                </td>
-                <td></td>
+    require 'database.php';
 
-            </tr>
-            <tr>
-                <td>Engineering (Bachelor of Arts (Hons))
-                </td>
-                <td>It is a remarkable program permitting you to keep your alternatives open while outfitting you with
-                    all
-                    the scientific, plan and figuring abilities that support present day building practice.The initial
-                    two
-                    years of the course are basically same for all understudies and mean to give a wide review of the
-                    subject, covering mechanical and auxiliary designing, just as materials, electrical and data
-                    designing.
-                </td>
+    try {
+    
+        $stmt = $conn->prepare("SELECT courses, description FROM cambridge");
+        $stmt->execute();
 
-            </tr>
-            <tr>
-                <td>Machine Learning and Machine Intelligence (MPhil)
-                </td>
-                <td></td>
+        // set the resulting array to associative
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-            </tr>
-            <tr>
-                <td>Materials Science and Metallurgy (Masters)
-                </td>
-                <td></td>
-
-            </tr>
-        </table>
+        foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+        echo $v;
+        }
+    }
+    catch(PDOException $e) {
+     echo "Error: " . $e->getMessage();
+    }
+    $conn = null;
+    echo "</table>";
+    ?>
+    <hr>
+<h2>Comments</h2>
+<?php
+    require 'database.php';
+    try {
+    
+        $query = $conn->prepare("SELECT username, comment FROM cam_comments");
+        $query->execute();
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+        $name =  $row['username'];
+        $comment = $row['comment'];
+       
+        echo "<p style= 'font-size: 25px;'>".$name."</p>";
+       
+        echo "<p style= 'font-size: 20px;'>".$comment."</p>"; 
+        }
+        }
+    catch(PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    $conn = null;
+?>
+<hr>
+<form action="comment.php" method= "POST">
+    <input type="text" placeholder="Type a comment" name="comment" style= "width: 80%"><br><br>
+    <div class="input-group-append">
+            <button class="btn btn-outline-success" type="submit" href="#">Submit</button>
+    </div>
+</form>
 
         <h3>See where Cambridge is located</h3> <br>
         <iframe
@@ -158,6 +155,7 @@
             <a href="#" class="fa fa-instagram"></a>
         </div>
     </div>
+<script src = "navbar.js"></script>
 </body>
 
 </html>

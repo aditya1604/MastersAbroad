@@ -127,12 +127,13 @@
     <h1>
       <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>
     </h1>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"><a href="index.php">HOME</a></li>
-        <li class="nav-item"><a class="nav-link" href="login.php">LOGIN</a></li>
-        <li class="nav-item"><a class="nav-link" href="signup.html">SIGNUP</a></li>
-      </ul>
+    <div class="topnav" id="myTopnav">
+        <a href="index.php" class="active">Home</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">SIGNUP</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
   </nav>
   <div class="container">
@@ -151,7 +152,7 @@
       <input type="email" placeholder="Enter Email" name="email" required><br>
 
       <label for="password"><b>Password</b></label><br>
-      <input type="password" placeholder="Enter Password" id="psw" name="pass" required><br>
+      <input type="password" placeholder="Enter Password" name="pass" required><br>
 
       <label style="color: white;">
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -190,6 +191,7 @@
       <a href="#" class="fa fa-instagram"></a>
     </div>
   </div>
+<script src = "res.js"></script>
 </body>
 
 </html>

@@ -10,7 +10,7 @@
             border-collapse: collapse;
         }
     </style>
-    <title>EduMaster</title>
+    <title>Masters Abroad</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,13 +25,14 @@
         <h1>
           <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>
         </h1>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a href="index.php">HOME</a></li>
-            <li class="nav-item"><a class="nav-link" href="login.html">LOGIN</a></li>
-            <li class="nav-item"><a class="nav-link" href="signup.html">SIGNUP</a></li>
-          </ul>
-        </div>
+        <div class="topnav" id="myTopnav">
+        <a href="index.php" class="active">Home</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">SIGNUP</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
       </nav>
    
     <main class="container">
@@ -50,130 +51,83 @@
         </p>
     </div>
     <div>
-        <img src="img/MITimage.jpg" style="height:350px;" />
+        <img src="img/MITimage.jpg" alt="mit"style="height:350px;" />
     </div><br>
 
     <br><br>
 
     <h3>Engineering graduate courses offered at MIT</h3><br>
-    <table style="width:100%">
-        <tr>
-            <th>Courses</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>Aerospace Engineering (BS)</td>
-            <td></td>
+<?php
+echo "<table style='border: solid 1px black; width:80%'>";
+ echo "<tr><th>Courses</th><th>Description</th></tr>";
 
-        </tr>
-        <tr>
-            <td>Biological Engineering (Masters)</td>
-            <td></td>
+class TableRows extends RecursiveIteratorIterator {
+    function __construct($it) {
+        parent::__construct($it, self::LEAVES_ONLY);
+    }
 
-        </tr>
-        <tr>
-            <td>
-                Chemical Engineering (MS)</td>
-            <td></td>
+    function current() {
+        return "<td style='width: 150px; border: 1px solid black;'>" . parent::current(). "</td>";
+    }
 
-        </tr>
-        <tr>
-            <td>Chemical Engineering (BS)
-            </td>
-            <td></td>
+    function beginChildren() {
+        echo "<tr>";
+    }
 
-        </tr>
-        <tr>
-            <td>Civil & Environmental Engineering (MS)
-            </td>
-            <td>This professional-oriented graduate program consists of high level, fast paced coursework and
-                significant engagement with a real world engineering projects.</td>
+    function endChildren() {
+        echo "</tr>" . "\n";
+    }
+}
 
-        </tr>
-        <tr>
-            <td>Civil Engineering</td>
-            <td></td>
+require 'database.php';
 
-        </tr>
-        <tr>
-            <td>Computational Biology (Masters)
-            </td>
-            <td></td>
+try {
+    
+    $stmt = $conn->prepare("SELECT courses, description FROM mit");
+    $stmt->execute();
 
-        </tr>
-        <tr>
-            <td>Computer Science (MS)</td>
-            <td></td>
+    // set the resulting array to associative
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-        </tr>
-        <tr>
-            <td>Computer Science (BS)
-            </td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <td>Computer Science, Economics, and Data Science (BS)
-            </td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <td>Electrical Engineering (MS)
-            </td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <td>Electrical Engineering and Computer Sciences (Masters)</td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <td>Electrical Engineering and Computer Sciences (BSc)
-            </td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <td>Industrial Engineering (MS)
-            </td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <td>Institute for Medical Engineering and Science (Masters)
-            </td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <td>Materials Science & Engineering (MS)
-            </td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <td>Mechanical Engineering (MS)
-            </td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <td>Mechanical Engineering (BS)
-            </td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <td>Ocean Engineering (Masters)
-            </td>
-            <td></td>
-
-        </tr>
-
-    </table>
-
+    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+        echo $v;
+    }
+}
+catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+$conn = null;
+echo "</table>";
+?>
+<hr>
+<h2>Comments</h2>
+<?php
+    require 'database.php';
+    try {
+    
+        $query = $conn->prepare("SELECT username, comment FROM mit_comments");
+        $query->execute();
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+        $name =  $row['username'];
+        $comment = $row['comment'];
+       
+        echo "<p style= 'font-size: 25px;'>".$name."</p>";
+       
+        echo "<p style= 'font-size: 20px;'>".$comment."</p>"; 
+        }
+        }
+    catch(PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    $conn = null;
+?>
+<form action="comment.php" method= "POST">
+    <input type="text" placeholder="Type a comment" name="comment" style= "width: 80%"><br><br>
+    <div class="input-group-append">
+            <button class="btn btn-outline-success" type="submit" href="#">Submit</button>
+    </div>
+</form>
+<hr>
     <h3>See where MIT is located</h3> <br>
     <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12075728.377479663!2d-71.09416!3d42.360091!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd0e08ea5b308203c!2sMassachusetts%20Institute%20of%20Technology!5e0!3m2!1sen!2sus!4v1586257436635!5m2!1sen!2sus"
@@ -195,6 +149,7 @@
       <a href="#" class="fa fa-instagram"></a>
     </div>
   </div>
-    </body>
+<script src = "navbar.js"></script>
+</body>
 
 </html>

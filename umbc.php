@@ -10,7 +10,6 @@
             border-collapse: collapse;
             margin: 2%;
             padding-right: 4%;
-            width: 100%;
         }
     </style>
     <title>masters Abroad</title>
@@ -25,19 +24,20 @@
 
 <body style="background-image: none;">
     <nav class="navbar navbar-expand-lg navbar-light" id="header">
-        <h1>
-            <a id="masters" href="user.php" style="color:wheat;">Masters Abroad</a>
-        </h1>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="user.php">HOME</a></li>
-                <li class="nav-item"><a class="nav-link" href="universities.html">UNIVERSITIES</a></li>
-                <li class="nav-item"><a class="nav-link" href="articles.html">ARTICLES</a></li>
-                <li class="nav-item"><a class="nav-link" href="update_password.html">Update Password</a></li>
-                <li class="nav-item"><a class="nav-link" href="logout.php" >SIGN OUT</a></li>i>
-            </ul>
-        </div>
-    </nav>
+    <h1>
+      <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>
+    </h1>
+    <div class="topnav" id="myTopnav">
+        <a href="user.php" class="active">Home</a>
+        <a class="nav-link" href="universities.html">UNIVERSITIES</a>
+        <a class="nav-link" href="articles.html">ARTICLES</a>
+        <a class="nav-link" href="update_password.html">Update Password</a>
+        <a class="nav-link" href="logout.php" >SIGN OUT</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+  </nav><br><br>
 
     <main class="container">
     <h1 style="font-size: xx-large;">University of MaryLand Baltimore County</h1><br><br>
@@ -54,87 +54,83 @@
             concentration in the building, regular sciences, nonconformists and sociologies programs. </p>
     </div><br><br>
     <div>
-        <img src="img/coventry.jpeg" style="height:350px;" />
+        <img alt="umbc" src="img/coventry.jpeg" style="height:350px;" />
     </div><br>
     <br><br><br><br>
     <hr>
 
     <h3>Engineering graduate courses offered at UMBC</h3>
-    <table style="width:60%">
-        <tr>
-            <th>Courses</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>Biotechnology (M.P.S.)
-            </td>
-            <td></td>
+      <?php
+            echo "<table style='border: solid 1px black; width:80%'>";
+            echo "<tr><th>Courses</th><th>Description</th></tr>";
 
-        </tr>
-        <tr>
-            <td>Chemical & Biochemical Engineering (MS)
-            </td>
-            <td></td>
+        class TableRows extends RecursiveIteratorIterator {
+            function __construct($it) {
+            parent::__construct($it, self::LEAVES_ONLY);
+        }
 
-        </tr>
-        <tr>
-            <td>
-                Computer Science (MSc)
-            </td>
-            <td></td>
+        function current() {
+            return "<td style='width: 150px; border: 1px solid black;'>" . parent::current(). "</td>";
+        }
 
-        </tr>
-        <tr>
-            <td>Computer Engineering (MS)
-            </td>
-            <td></td>
+        function beginChildren() {
+            echo "<tr>";
+        }
 
-        </tr>
-        <tr>
-            <td>Embedded Systems Engineering (MSc)
-            </td>
-            <td></td>
+        function endChildren() {
+            echo "</tr>" . "\n";
+        }
+}
 
-        </tr>
-        <tr>
-            <td>Cyber Security (M.P.S.)
-            </td>
-            <td></td>
+require 'database.php';
 
-        </tr>
-        <tr>
-            <td>Data Science (M.P.S.)
-            </td>
-            <td></td>
+try {
+    
+    $stmt = $conn->prepare("SELECT courses, description FROM umbc");
+    $stmt->execute();
 
-        </tr>
-        <tr>
-            <td>Electrical Engineering (MS)
-            </td>
-            <td></td>
+    // set the resulting array to associative
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-        </tr>
-        <tr>
-            <td>Engineering Management (MS)
-            </td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <td>Geographic Information Systems (MS)
-            </td>
-            <td></td>
-
-        </tr>
-        <tr>
-            <td>System Engineering (MS)
-            </td>
-            <td></td>
-
-        </tr>
-
-    </table>
-
+    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+        echo $v;
+    }
+}
+catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+$conn = null;
+echo "</table>";
+?>
+<hr>
+<h2>Comments</h2>
+<?php
+    require 'database.php';
+    try {
+    
+        $query = $conn->prepare("SELECT username, comment FROM umbc_comments");
+        $query->execute();
+        while($row = $query->fetch(PDO::FETCH_ASSOC)){
+        $name =  $row['username'];
+        $comment = $row['comment'];
+       
+        echo "<p style= 'font-size: 25px;'>".$name."</p>";
+       
+        echo "<p style= 'font-size: 20px;'>".$comment."</p>"; 
+        }
+        }
+    catch(PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    $conn = null;
+?>
+<form action="comment.php" method= "POST">
+    <input type="text" placeholder="Type a comment" name="comment" style= "width: 80%"><br><br>
+    <div class="input-group-append">
+            <button class="btn btn-outline-success" type="submit" href="#">Submit</button>
+    </div>
+</form>
+<hr>
     <h3>See where UMBC is located</h3> <br>
     <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12654329.307066437!2d-76.710967!3d39.255676!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7119b4daadb403d!2sUniversity%20of%20Maryland%2C%20Baltimore%20County!5e0!3m2!1sen!2sus!4v1589199123047!5m2!1sen!2sus"
@@ -156,6 +152,7 @@
       <a href="#" class="fa fa-instagram"></a>
     </div>
   </div>
+<script src = "navbar.js"></script>
 </body>
 
 </html>
