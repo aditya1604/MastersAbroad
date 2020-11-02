@@ -56,7 +56,7 @@
             </p>
         </div>
         <div>
-            <img src="img/cambridge.jpeg" alt="cambridge"style="height:350px;" />
+            <img src="img/cambridge.jpeg" alt="cambridge" style="height:350px;" />
         </div><br>
 
         <hr>
@@ -130,7 +130,7 @@
 <form action="comment.php" method= "POST">
     <input type="text" placeholder="Type a comment" name="comment" style= "width: 80%"><br><br>
     <div class="input-group-append">
-            <button class="btn btn-outline-success" type="submit" href="#">Submit</button>
+            <button class="btn btn-outline-success" type="submit">Submit</button>
     </div>
 </form>
 

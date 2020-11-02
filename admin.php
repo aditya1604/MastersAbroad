@@ -6,7 +6,7 @@ if(isset($_SESSION['username'])) {
 } 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="eng">
 <head>
 <style>
 table {
