@@ -16,7 +16,7 @@
         die('Connection Failed :'.$conn->connect_error);
     }
     else {
-        $stmt = $conn->prepare("insert into comments (username, comment)
+        $stmt = $conn->prepare("insert into coventry_comments (username, comment)
          values(?, ?)");
 
         $stmt->execute([$name, $comment]);
