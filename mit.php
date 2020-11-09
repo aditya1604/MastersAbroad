@@ -26,9 +26,11 @@
           <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>
         </h1>
         <div class="topnav" id="myTopnav">
-        <a href="index.php" class="active">Home</a>
-        <a href="login.html">Login</a>
-        <a href="signup.html">SIGNUP</a>
+        <a href="user.php" class="active">Home</a>
+        <a class="nav-link" href="universities.html">UNIVERSITIES</a>
+        <a class="nav-link" href="articles.html">ARTICLES</a>
+        <a class="nav-link" href="update_password.html">Update Password</a>
+        <a class="nav-link" href="logout.php" >SIGN OUT</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
@@ -36,7 +38,7 @@
       </nav>
    
     <main class="container">
-        <h1 style="font-size: xx-large;">Massachusetts Institute of Technology(MIT)</h1><br><br>
+        <h2 style="font-size: xx-large;">Massachusetts Institute of Technology(MIT)</h2><br><br>
     <div class="col-md-6">
         <p style="font-size:20px; color:#03225C; text-align: justify;">
             <span style="font-size: larger; color: black;">About Massachusetts Institute of Technology </span><br><br>
@@ -51,7 +53,7 @@
         </p>
     </div>
     <div>
-        <img src="img/MITimage.jpg" alt="mit"style="height:350px;" />
+        <img src="img/MITimage.jpg" alt="mit" style="height:350px;" />
     </div><br>
 
     <br><br>
@@ -124,7 +126,7 @@ echo "</table>";
 <form action="comment.php" method= "POST">
     <input type="text" placeholder="Type a comment" name="comment" style= "width: 80%"><br><br>
     <div class="input-group-append">
-            <button class="btn btn-outline-success" type="submit" href="#">Submit</button>
+            <button class="btn btn-outline-success" type="submit">Submit</button>
     </div>
 </form>
 <hr>

@@ -28,9 +28,11 @@
             <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>
         </h1>
         <div class="topnav" id="myTopnav">
-        <a href="index.php" class="active">Home</a>
-        <a href="login.html">Login</a>
-        <a href="signup.html">SIGNUP</a>
+        <a href="user.php" class="active">Home</a>
+        <a class="nav-link" href="universities.html">UNIVERSITIES</a>
+        <a class="nav-link" href="articles.html">ARTICLES</a>
+        <a class="nav-link" href="update_password.html">Update Password</a>
+        <a class="nav-link" href="logout.php" >SIGN OUT</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
         </a>
@@ -39,7 +41,7 @@
 
 
     <main class="container">
-        <h1 style="font-size: xx-large;">University of Cambridge</h1><br><br>
+        <h2 style="font-size: xx-large;">University of Cambridge</h2><br><br>
         <div class="col-md-6">
             <p style="font-size:20px; color:#03225C; text-align: justify;">
                 <span style="font-size: larger; color: black;">About University of Oxford </span><br><br>

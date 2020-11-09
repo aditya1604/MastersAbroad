@@ -40,7 +40,7 @@
   </nav><br><br>
 
     <main class="container">
-    <h1 style="font-size: xx-large;">University of MaryLand Baltimore County</h1><br><br>
+    <h2 style="font-size: xx-large;">University of MaryLand Baltimore County</h2><br><br>
     <div class="col-md-6">
         <p style="font-size:20px; color:#03225C; text-align: justify;">
             <span style="font-size: larger; color: black;">About UMBC </span><br><br>
@@ -127,7 +127,7 @@ echo "</table>";
 <form action="comment.php" method= "POST">
     <input type="text" placeholder="Type a comment" name="comment" style= "width: 80%"><br><br>
     <div class="input-group-append">
-            <button class="btn btn-outline-success" type="submit" href="#">Submit</button>
+            <button class="btn btn-outline-success" type="submit">Submit</button>
     </div>
 </form>
 <hr>

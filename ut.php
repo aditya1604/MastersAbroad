@@ -39,7 +39,7 @@
     </div>
   </nav><br><br>
     <main class="container">
-    <h1 style="font-size: xx-large;">University of Texas At Dallas</h1><br><br>
+    <h2 style="font-size: xx-large;">University of Texas At Dallas</h2><br><br>
     <div class="col-md-6">
         <p style="font-size:20px; color:#03225C; text-align: justify;">
             <span style="font-size: larger; color: black;">About University of Texas At Dallas </span><br><br>
@@ -53,7 +53,7 @@
         </p>
     </div>
     <div>
-        <img src="img/utd.jpeg" style="height:350px;" />
+        <img src="img/utd.jpeg" alt="utd" style="height:350px;" />
     </div><br>
 
     <hr>
@@ -126,7 +126,7 @@ echo "</table>";
 <form action="comment.php" method= "POST">
     <input type="text" placeholder="Type a comment" name="comment" style= "width: 80%"><br><br>
     <div class="input-group-append">
-            <button class="btn btn-outline-success" type="submit" href="#">Submit</button>
+            <button class="btn btn-outline-success" type="submit">Submit</button>
     </div>
 </form>
 <hr>

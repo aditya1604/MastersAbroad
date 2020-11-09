@@ -48,7 +48,7 @@ if(isset($_SESSION['username'])) {
   </nav><br><br>
 
     <main class="container">
-        <h1 style="font-size: xx-large;">Coventry University</h1><br><br>
+        <h2 style="font-size: xx-large;">Coventry University</h2><br><br>
         <div class="col-md-6">
             <p style="font-size:20px; color:#03225C; text-align: justify;">
                 <span style="font-size: larger; color: black;"> Coventry University </span><br><br>
