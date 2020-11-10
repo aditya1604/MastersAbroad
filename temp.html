@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" id="header">
+    <h1>
+      <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>
+    </h1>
+    <div class="topnav" id="myTopnav">
+        <a href="user.php" class="active">Home</a>
+        <a class="nav-link" href="universities.html">UNIVERSITIES</a>
+        <a class="nav-link" href="articles.html">ARTICLES</a>
+        <a class="nav-link" href="update_password.html">Update Password</a>
+        <a class="nav-link" href="logout.php" >SIGN OUT</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+  </nav>
+<main>
+    <form id="lg" action="temp.php" method="POST">
+
+        <label><b>Old Email</b></label><br>
+        <input type="email" placeholder="Email" name="email"><br><br>
+
+        <label><b>New Email</b></label><br>
+        <input type="email" placeholder="New Password" name="newmail"><br><br>
+
+        <label><b>Password</b></label><br>
+        <input type="password" placeholder="New Password" name="pass"><br><br>
+
+        <button id="button" name="update">Update</button>
+
+    </form>
+
+    <img src="img/lg.png" alt="lg" width="50%" height="500" id="img">
+</main>
+    <div class="footer row">
+
+        <div class="siteinfo col-md-4">
+          <p>Masters Abroad<br>Created by <a href="mailto:4surya58@solent.ac.uk">Aditya Suryawanshi &copy;</a></p>
+        </div>
+      
+        <div class="socialmedia col-md-8">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-google"></a>
+          <a href="#" class="fa fa-linkedin"></a>
+          <a href="#" class="fa fa-youtube"></a>
+          <a href="#" class="fa fa-instagram"></a>
+        </div>
+      </div>
+
+<script src = "navbar.js"></script>
+</body>
+
+</html>
