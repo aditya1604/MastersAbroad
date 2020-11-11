@@ -32,6 +32,7 @@
         <a class="nav-link" href="universities.html">UNIVERSITIES</a>
         <a class="nav-link" href="articles.html">ARTICLES</a>
         <a class="nav-link" href="update_password.html">Update Password</a>
+        <a class="nav-link" href="update_email.html">Update Email</a>
         <a class="nav-link" href="logout.php" >SIGN OUT</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
