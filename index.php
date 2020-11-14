@@ -16,6 +16,28 @@ header("location: user.php");
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="style.css">
+  <style>
+  .jumbotron {
+    background-color: #f4511e;
+    color: #fff;
+    padding: 100px 25px;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo {
+    font-size: 200px;
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+  }
+  </style>
 </head>
 
 <body >
@@ -31,7 +53,7 @@ header("location: user.php");
             <i class="fa fa-bars"></i>
         </a>
     </div>
-  </nav><br><br>
+  </nav>
 
   <main class="row" id = "article">
     <div style="margin-left: -4%;">
@@ -71,25 +93,30 @@ header("location: user.php");
       </a>
     </div>
   </main>
-  
-  <div id="uni" style="margin-left: 5%;">
-
-    <img alt="article" src="img/articlefront.png" class="img-fluid" /><span style="font-size:large; color:black; margin-left: 1%;">TRENDING
-      ARTICLES</span>
+  <hr>
+  <div class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-education" style="font-size:36px;"></span>
+      <h4>Grad School Finder</h4>
+      <p>Try our smart software and see a list of safe, realistic & ambitious universities.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="fa fa-binoculars" style="font-size:36px;"></span>
+      <h4>Undergrad College Finder</h4>
+      <p>Let us help to find best Undergrad School for you!</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-bookmark" style="font-size:36px;"></span>
+      <h4>Articles</h4>
+      <p>Learn from the articles, whether you are writinh your sop or lor..</p>
+    </div>
   </div>
-  <div class="row" id="article">
-    <section class="col-12 col-md-4 col-lg-3">
-      <a href="sop.html">
-      <img alt="sop and essay" class="img-fluid" src="img/sop1.jpeg" />
-      <h2>Mistakes in Writing SOP & Essays</h2></a>
-    </section>
-    <section class="col-12 col-md-4 col-lg-3">
-      <a href="lor.html">
-      <img alt="lor" class="img-fluid" src="img/lor.png" />
-      <h2>Letter Of Recommendation</h2></a>
-    </section>
-
-  </div><br>
+  <br><br>
+</div>
   <div class="footer row">
 
     <div class="siteinfo col-md-4">
