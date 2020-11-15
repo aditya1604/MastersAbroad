@@ -48,7 +48,7 @@ if(isset($_SESSION['username'])) {
             <i class="fa fa-bars"></i>
         </a>
     </div>
-  </nav>
+  </nav><br>
    <main class="row" id="ar">
       <div>
         <img src="img/trenduni.png" alt="university" class="img-fluid" /><span

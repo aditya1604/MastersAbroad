@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    #h {
+      text-align: center;
+      color: black;
+    }
+
+    /* Full-width input fields */
+    input[type=text],
+    input[type=password] {
+      width: 80%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type=email] {
+      width: 80%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    #sign {
+      font-size: large;
+      color: black;
+      padding-left: 2%;
+      padding-bottom: 2%;
+      margin: 2%;
+      width: 90%;
+      float: left;
+    }
+
+    /* Set a style for all buttons */
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 90%;
+      opacity: 0.9;
+    }
+
+
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+
+      background-color: #f44336;
+    }
+
+    /* Float cancel and signup buttons and add an equal width */
+    .cancelbtn,
+    .signupbtn {
+      float: center;
+      width: 30%;
+    }
+
+
+
+    /* Change styles for cancel button and signup button on extra small screens */
+    @media screen and (max-width: 300px) {
+
+      .cancelbtn,
+      .signupbtn {
+        width: 90%;
+      }
+    }
+
+    /* The message box is shown when the user clicks on the password field */
+    #message {
+      display: none;
+      background: #f1f1f1;
+      color: #000;
+      position: relative;
+      padding: 20px;
+      margin-top: 10px;
+    }
+
+    #message p {
+      padding: 10px 35px;
+      font-size: 18px;
+    }
+
+    /* Add a green text color and a checkmark when the requirements are right */
+    .valid {
+      color: green;
+    }
+
+    .valid:before {
+      position: relative;
+      left: -35px;
+      content: "✔";
+    }
+
+    /* Add a red text color and an "x" when the requirements are wrong */
+    .invalid {
+      color: red;
+    }
+
+    .invalid:before {
+      position: relative;
+      left: -35px;
+      content: "✖";
+    }
+  </style>
+  <title>SignUp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" id="header">
+    <h1>
+      <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>
+    </h1>
+    <div class="topnav" id="myTopnav">
+        <a href="index.php" class="active">Home</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">SIGNUP</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+  </nav>
+  <div class="container">
+  <form id="sign" style="border:1px solid #ccc" action="signup.php" method="POST">
+   
+      <h2>Sign Up</h2>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label ><b>First Name</b></label><br>
+      <input type="text" placeholder="First Name" name="firstname" required><br>
+
+      <label><b>Last Name</b></label><br>
+      <input type="text" placeholder="Last Name" name="lastname" required><br>
+
+      <label><b>Email</b></label><br>
+      <input type="email" placeholder="Enter Email" name="email" required><br>
+
+      <label><b>Password</b></label><br>
+      <input type="password" placeholder="Enter Password" name="pass" required><br>
+
+      <label >
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label><br>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" class="cancelbtn" onclick="window.location='index.php'">Cancel</button>
+        <button type="submit" class="signupbtn" name="signup">Sign Up</button>
+      </div>
+
+  </form>
+  </div>
+  <div id="message">
+    <h3>Password must contain the following:</h3>
+    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+    <p id="number" class="invalid">A <b>number</b></p>
+    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+  </div>
+  <script src="api/password_validator.js"></script>
+  <div class="footer row">
+
+    <div class="siteinfo col-md-4">
+      <p>Masters Abroad<br>Created by <a href="mailto:4surya58@solent.ac.uk">Aditya Suryawanshi &copy;</a></p><br>
+      <a href="adminlogin.html">Admin Login</a>
+    </div>
+
+    <div class="socialmedia col-md-8">
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-google"></a>
+      <a href="#" class="fa fa-linkedin"></a>
+      <a href="#" class="fa fa-youtube"></a>
+      <a href="#" class="fa fa-instagram"></a>
+    </div>
+  </div>
+<script src = "res.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .read-more { 
+            position: absolute; 
+            bottom: 0; 
+            left: 0;
+            width: 100%; 
+            text-align: center; 
+            margin: 0; padding: 30px 0; 
+            color: black;
+            font-size: large;
+            /* "transparent" only works here because == rgba(0,0,0,0) */
+            background-image: linear-gradient(to bottom, transparent, black);
+        }
+    </style>
+    <title>Masters Abroad</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-image: none;">
+    <nav class="navbar navbar-expand-lg navbar-light" id="header">
+    <h1>
+      <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>
+    </h1>
+    <div class="topnav" id="myTopnav">
+        <a href="index.php" class="active">Home</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">SIGNUP</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+  </nav><br><br>
+
+    <main class="container">
+        <h2 style="font-size: xx-large;">New York University</h2><br><br>
+        <div class="col-md-6">
+            <p style="font-size:20px; color:#03225C; text-align: justify;">
+                <span style="font-size: larger; color: black;">About New York University </span><br><br>
+                Being the alma mater of 36 Nobel Prize winners is no mean feat! New York University has accomplished
+                this
+                amazing achievement in its 185 years of existence. Not only that, New York University has been attended
+                by
+                some of the most renowned actors and directors of Hollywood. NYU is a breeding ground of great thinkers
+                and
+                stars of the future! It ranks #28 according to U.S. News' 'Best Global Universities Ranking' list.
+
+                <br>
+            </p>
+        </div>
+        <div>
+            <img src="img/NYUimage.jpeg" alt="nyu" style="height:350px;" />
+        </div>
+    <p class="read-more"><a href="login.html" class="button">Read More</a></p>
+    </main><br><br>
+    <div class="footer row">
+
+        <div class="siteinfo col-md-4">
+            <p>Masters Abroad<br>Created by <a href="mailto:4surya58@solent.ac.uk">Aditya Suryawanshi &copy;</a></p>
+        </div>
+
+        <div class="socialmedia col-md-8">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-instagram"></a>
+        </div>
+    </div>
+<script src = "navbar.js"></script>
+</body>
+
+</html>
