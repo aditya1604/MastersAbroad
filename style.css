@@ -80,13 +80,13 @@ section {
   text-decoration: none;
 }
 #button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 40%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  float: center;
+  width: 30%;
   }
 
 #img {

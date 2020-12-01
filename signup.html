@@ -37,35 +37,6 @@
       width: 90%;
       float: left;
     }
-
-    /* Set a style for all buttons */
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 90%;
-      opacity: 0.9;
-    }
-
-
-    /* Extra styles for the cancel button */
-    .cancelbtn {
-
-      background-color: #f44336;
-    }
-
-    /* Float cancel and signup buttons and add an equal width */
-    .cancelbtn,
-    .signupbtn {
-      float: center;
-      width: 30%;
-    }
-
-
-
     /* Change styles for cancel button and signup button on extra small screens */
     @media screen and (max-width: 300px) {
 
@@ -100,8 +71,6 @@
       left: -35px;
       content: "✔";
     }
-
-    /* Add a red text color and an "x" when the requirements are wrong */
     .invalid {
       color: red;
     }
@@ -155,14 +124,14 @@
       <input type="password" placeholder="Enter Password" name="pass" required><br>
 
       <label >
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        <input type="checkbox" name="remember" style="margin-bottom:15px"> Remember me
       </label><br>
 
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms and Condition</a>.</p>
 
       <div class="clearfix">
-        <button type="button" class="cancelbtn" onclick="window.location='index.php'">Cancel</button>
-        <button type="submit" class="signupbtn" name="signup">Sign Up</button>
+        <button type="button" id="button" onclick="window.location='index.php'">Cancel</button>
+        <button type="submit" id="button" name="signup">Sign Up</button>
       </div>
 
   </form>
