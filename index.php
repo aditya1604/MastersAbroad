@@ -75,7 +75,6 @@ header("location: user.php");
         <img class="img-fluid" alt="nyu" src="img/2.png" />
         <h2>NYU</h2>
       </a>
-
     </div>
 
     <div class="col-2 col-md-4 col-lg-2">
@@ -112,7 +111,7 @@ header("location: user.php");
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-bookmark" style="font-size:36px;"></span>
       <h4>Articles</h4>
-      <p>Learn from the articles, whether you are writinh your sop or lor..</p>
+      <p>Learn from the articles, whether you are writing your sop or lor</p>
     </div>
   </div>
   <br><br>
@@ -121,7 +120,6 @@ header("location: user.php");
 
     <div class="siteinfo col-md-4">
       <p>Masters Abroad<br>Created by <a href="mailto:4surya58@solent.ac.uk">Aditya Suryawanshi &copy;</a></p><br>
-      <a href="adminlogin.html">Admin Login</a>
     </div>
 
     <div class="socialmedia col-md-8">
