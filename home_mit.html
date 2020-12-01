@@ -3,17 +3,15 @@
 
 <head>
 <style>
-    .read-more { 
-            position: absolute; 
-            bottom: 0; 
+    #bton {
+            background: transparent;
+            background-color: grey;
+            width: 100%;
+            text-align: center;
             left: 0;
-            width: 100%; 
-            text-align: center; 
-            margin: 0; padding: 30px 0; 
-            color: black;
-            font-size: large;
-            /* "transparent" only works here because == rgba(0,0,0,0) */
-            background-image: linear-gradient(to bottom, transparent, black);
+            color: white;
+            font-size: 20px;
+            padding: 19px;
         }</style>
 
     <title>Masters Abroad</title>
@@ -57,10 +55,10 @@
         </p>
     </div>
     <div>
-        <img src="img/MITimage.jpg" alt="mit" style="height:350px;" />
+        <img src="img/MITimage.jpg" alt="mit" style="height:350px;" /><br><br>
     </div>
-    <p class="read-more"><a href="login.html" class="button">Read More</a></p>
-</main><br><br><br>
+</main>
+<a href="login.html"><input id="bton" type="submit" name="login" value="Read More"></a>
 <div class="footer row">
 
     <div class="siteinfo col-md-4">
