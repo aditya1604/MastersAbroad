@@ -19,8 +19,10 @@
         $stmt = $conn->prepare("insert into psu_comments (username, comment)
          values(?, ?)");
 
-        $stmt->execute([$name, $comment]);
-        header('Location: user.php');
+         $stmt->bindParam(1, $name);
+         $stmt->bindParam(2, $comment);
+         $stmt->execute();
+        header('Location: psu.php');
     }
 }
 ?>
