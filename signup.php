@@ -10,9 +10,12 @@ $pass = $_POST['pass'];
     }
     else {
         $stmt = $conn->prepare("insert into signup (firstname, lastname, email, pass)
-         values(?, ?, ?, ?)");
-
-        $stmt->execute([$firstname, $lastname, $email, $pass]);
+        values(?, ?, ?, ?)");
+        $stmt->bindParam(1, $firstname);
+        $stmt->bindParam(2, $lastname);
+        $stmt->bindParam(3, $email);
+        $stmt->bindParam(4, $pass);
+        $stmt->execute();
 
         header('location: user.php');
   

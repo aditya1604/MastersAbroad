@@ -33,7 +33,7 @@ if(isset($_SESSION['username'])) {
 <body style="background-image: none;">
 <nav class="navbar navbar-expand-lg navbar-light" id="header">
     <h1>
-      <a id="masters" href="index.php" style="color:wheat;">Masters Abroad</a>
+      <a id="masters" href="user.php" style="color:wheat;">Masters Abroad</a>
     </h1>
     <div class="topnav" id="myTopnav">
         <a href="user.php" class="active">Home</a>
